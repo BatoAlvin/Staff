@@ -159,7 +159,7 @@ color:#000;
 
         </form>
 
-                <a href="" class="btn btn-success" style="float: right;margin-right:10px;"><i class="fa fa-download">Excel</i></a>
+                <a href="{{ route('exportstaff')}}" class="btn btn-success" style="float: right;margin-right:10px;"><i class="fa fa-download">Excel</i></a>
 
             </div>
             <div class="card-body">
@@ -174,6 +174,7 @@ color:#000;
                                 <th>Gender</th>
                                 <th>Address</th>
                                 <th>Avatar</th>
+                                <th>View</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -185,9 +186,14 @@ color:#000;
                                 <td>{{$staff->staff_dob}}</td>
                                 <td>{{$staff->gender}}</td>
                                 <td>{{$staff->staff_address}}</td>
+
                                 <td>
                                     <img width="60" height="60" src="{{ asset('uploads/'.$staff->staff_avatar)}}" class="rounded-circle" alt="#">
                                 </td>
+                                <td>
+                                    <a href="{{url('staff/'.$staff->id )}}"> <button class="btn btn-success" style="margin-right: 5px;"><i class="fa fa-eye"></i></button></a>
+
+                                                            </td>
                             </tr>
                             @endforeach
                         </tbody>

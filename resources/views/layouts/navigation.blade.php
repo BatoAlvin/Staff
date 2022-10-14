@@ -8,10 +8,13 @@
     <title>Staff </title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+
+
     <link href="{{ asset('vendor\owl-carousel\css\owl.carousel.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{ asset('vendor\owl-carousel\css\owl.theme.default.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{ asset('vendor\jqvmap\css\jqvmap.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css\style.css')}}" rel="stylesheet" type="text/css">
+
 
 
 
@@ -153,10 +156,16 @@
                                         <i class="icon-envelope-open"></i>
                                         <span class="ml-2">Inbox </span>
                                     </a>
-                                    <a href="./page-login.html" class="dropdown-item">
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <a href="{{ route('logout') }}" class="dropdown-item"
+                                        onclick="event.preventDefault();
+                                      this.closest('form').submit();"
+                                        >
                                         <i class="icon-key"></i>
-                                        <span class="ml-2">Logout </span>
+                                        <span class="ml-2">Logout</span>
                                     </a>
+                                </form>
                                 </div>
                             </li>
                         </ul>
@@ -178,20 +187,24 @@
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
                         <ul aria-expanded="false">
-                            <li><a href="./index.html">Dashboard 1</a></li>
+                            <li><a href="#">Dashboard 1</a></li>
                             <li><a href="./index2.html">Dashboard 2</a></li>
                         </ul>
                     </li>
-                    <li class="nav-label">Staff</li>
+                    <li class="nav-label">Apps</li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-app-store"></i><span class="nav-text">Staff</span></a>
-
-                            <ul aria-expanded="false">
-                                <li ><a href="{{ route('staff.index')}}" class="fa-solid fa-arrow-right"> Staff Members</a></li>
-                                <li><a href="">Dashboard 2</a></li>
-                            </ul>
-
-
+                                class="icon icon-app-store"></i><span class="nav-text">Manage Staff</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ route('staff.index')}}">Staff</a></li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="./email-compose.html">Compose</a></li>
+                                    <li><a href="./email-inbox.html">Inbox</a></li>
+                                    <li><a href="./email-read.html">Read</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./app-calender.html">Calendar</a></li>
+                        </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-chart-bar-33"></i><span class="nav-text">Charts</span></a>
@@ -295,8 +308,7 @@
         <div class="content-body">
             <!-- row -->
             <div class="container-fluid">
-                @yield('content')
-
+              @yield('content')
             </div>
         </div>
         <!--**********************************
@@ -335,53 +347,31 @@
         Scripts
     ***********************************-->
     <!-- Required vendors -->
-    <script src="./vendor/global/global.min.js"></script>
-    <script src="./js/quixnav-init.js"></script>
-    {{-- <script src="./js/custom.min.js"></script> --}}
-
-
-    <!-- Vectormap -->
-    <script src="./vendor/raphael/raphael.min.js"></script>
-    {{-- <script src="./vendor/morris/morris.min.js"></script> --}}
-
-
-    <script src="./vendor/circle-progress/circle-progress.min.js"></script>
-    {{-- <script src="./vendor/chart.js/Chart.bundle.min.js"></script> --}}
-
-    <script src="./vendor/gaugeJS/dist/gauge.min.js"></script>
-
-    <!--  flot-chart js -->
-    <script src="./vendor/flot/jquery.flot.js"></script>
-    <script src="./vendor/flot/jquery.flot.resize.js"></script>
-
-    <!-- Owl Carousel -->
-    <script src="./vendor/owl-carousel/js/owl.carousel.min.js"></script>
-
-    <!-- Counter Up -->
-    <script src="./vendor/jqvmap/js/jquery.vmap.min.js"></script>
-    <script src="./vendor/jqvmap/js/jquery.vmap.usa.js"></script>
-    <script src="./vendor/jquery.counterup/jquery.counterup.min.js"></script>
-
-{{-- Css for styling tables --}}
-    <link href="{{ asset('vendor\datatables\css\jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css" id="bootstrap-stylesheet">
-
     <script src="{{ asset('vendor\global\global.min.js') }}"></script>
     <script src="{{ asset('js\quixnav-init.js') }}"></script>
     <script src="{{ asset('js\custom.min.js') }}"></script>
 
-    <!-- Datatable -->
-    <script src="{{ asset('vendor\datatables\js\jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('js\plugins-init\datatables.init.js') }}"></script>
-    {{-- <script src="{{ asset('js\dashboard\dashboard-1.js') }}"></script> --}}
+    <script src="{{ asset('vendor\raphael\raphael.min.js') }}"></script>
+    <script src="{{ asset('vendor\morris\morris.min.js') }}"></script>
+
+    <script src="{{ asset('vendor\circle-progress\circle-progress.min.js') }}"></script>
+    <script src="{{ asset('vendor\chart.js\Chart.bundle.min.js') }}"></script>
+    <script src="{{ asset('vendor\gaugeJS\dist\gauge.min.js') }}"></script>
+
+    <script src="{{ asset('vendor\flot\jquery.flot.js') }}"></script>
+    <script src="{{ asset('vendor\flot\jquery.flot.resize.js') }}"></script>
+
+    <script src="{{ asset('vendor\owl-carousel\js\owl.carousel.min.js') }}"></script>
+
+    <script src="{{ asset('vendor\jqvmap\js\jquery.vmap.min.js') }}"></script>
+    <script src="{{ asset('vendor\jqvmap\js\jquery.vmap.usa.js') }}"></script>
+    <script src="{{ asset('vendor\jquery.counterup\jquery.counterup.min.js') }}"></script>
+
+    <script src="{{ asset('js\dashboard\dashboard-1.js') }}"></script>
 
 
-    {{-- <script src="{{ asset('vendor\jquery-validation\jquery.validate.min.js') }}"></script>
-    <script src="{{ asset('js\plugins-init\jquery.validate-init.js') }}"></script> --}}
 
 
-    <script src="{{ asset('jquery.js') }}"></script>
-    <script src="{{ asset('validate.js') }}"></script>
-    <script src="{{ asset('staff.js') }}"></script>
 
 </body>
 

@@ -27,5 +27,7 @@ Route::resource('staff', StaffController::class)->middleware('auth');
 Route::post('/search', [StaffController::class, 'search'])->name('search')
 ->middleware('auth');
 
+Route::get('exportstaff/', [StaffController::class, 'export'])->name('exportstaff')->middleware('auth');
+
 
 require __DIR__.'/auth.php';

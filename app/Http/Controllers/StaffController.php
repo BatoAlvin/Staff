@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Staff;
+use App\Exports\StaffsExport;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 
 class StaffController extends Controller
@@ -15,8 +17,21 @@ class StaffController extends Controller
     public function index()
     {
         $staffs = Staff::all();
-        return view('staff.viewstaff')->with('staffs',$staffs);
+        return view('staff.index')->with('staffs',$staffs);
     }
+
+    public function search(Request $request){
+        // $honorable = Honorable::where('status',1)->get();
+     $staffs = Staff::where('status',1)->whereBetween('created_at', [$request->fromDate,$request->toDate])->get();
+     return view('staff.index',['staffs'=>$staffs]);
+    }
+
+    public function export()
+    {
+        return Excel::download(new StaffsExport, 'staff.xlsx');
+    }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -25,16 +40,7 @@ class StaffController extends Controller
      */
     public function create()
     {
-        // $data= new Postimage();
 
-        // if($request->file('staff_avatar')){
-        //     $file= $request->file('staff_avatar');
-        //     $filename= date('YmdHi').$file->getClientOriginalName();
-        //     $file-> move(public_path('public/Image'), $filename);
-        //     $data['staff_avatar']= $filename;
-        // }
-        // $data->save();
-        // return redirect()->route('images.view');
     }
 
     /**
@@ -45,10 +51,6 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
-        // $requestData = $request->all();
-        // $fileName = time().$request->file('staff_avatar')->getClientOriginalExtension();
-        // $path = $request->file('staff_avatar')->storeAs('images',$fileName,'public');
-        // $requestData['staff_avatar'] = '/storage/'.$path;
 
        if($request->hasfile('staff_avatar')){
             $file = $request->file('staff_avatar');
@@ -76,9 +78,10 @@ class StaffController extends Controller
      * @param  \App\Models\Staff  $staff
      * @return \Illuminate\Http\Response
      */
-    public function show(Staff $staff)
+    public function show($id)
     {
-        //
+        $staff = Staff::find($id);
+        return view('staff.staff')->with('staffs', $staff);
     }
 
     /**
