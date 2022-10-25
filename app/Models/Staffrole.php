@@ -5,14 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Staff extends Model
+class Staffrole extends Model
 {
     use HasFactory;
-    protected $table = 'staff';
+    protected $table = 'staffroles';
     protected $guarded = [];
-
-    public function staffrole(){
-        return $this->belongsTo(Staffrole::class,'role','id');
-    }
-
 }

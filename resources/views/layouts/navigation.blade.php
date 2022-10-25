@@ -8,7 +8,10 @@
     <title>Staff </title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+    {{-- <link href="./vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet"> --}}
+    <link href="{{ asset('vendor\datatables\css\jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css">
 
+    <script src="{{ asset('js\jquery.js')}}"></script>
 
     <link href="{{ asset('vendor\owl-carousel\css\owl.carousel.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{ asset('vendor\owl-carousel\css\owl.theme.default.min.css')}}" rel="stylesheet" type="text/css">
@@ -217,11 +220,11 @@
                             <li><a href="./chart-peity.html">Peity</a></li>
                         </ul>
                     </li>
-                    <li class="nav-label">Components</li>
+                    <li class="nav-label">Manage Roles</li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-world-2"></i><span class="nav-text">Bootstrap</span></a>
+                                class="icon icon-world-2"></i><span class="nav-text">Manage Roles</span></a>
                         <ul aria-expanded="false">
-                            <li><a href="./ui-accordion.html">Accordion</a></li>
+                            <li><a href="{{ route('staffrole.index')}}">Roles</a></li>
                             <li><a href="./ui-alert.html">Alert</a></li>
                             <li><a href="./ui-badge.html">Badge</a></li>
                             <li><a href="./ui-button.html">Button</a></li>
@@ -352,7 +355,7 @@
     <script src="{{ asset('js\custom.min.js') }}"></script>
 
     <script src="{{ asset('vendor\raphael\raphael.min.js') }}"></script>
-    <script src="{{ asset('vendor\morris\morris.min.js') }}"></script>
+
 
     <script src="{{ asset('vendor\circle-progress\circle-progress.min.js') }}"></script>
     <script src="{{ asset('vendor\chart.js\Chart.bundle.min.js') }}"></script>
@@ -367,11 +370,41 @@
     <script src="{{ asset('vendor\jqvmap\js\jquery.vmap.usa.js') }}"></script>
     <script src="{{ asset('vendor\jquery.counterup\jquery.counterup.min.js') }}"></script>
 
-    <script src="{{ asset('js\dashboard\dashboard-1.js') }}"></script>
+    <script src="{{ asset('vendor\datatables\js\jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('js\plugins-init\datatables.init.js') }}"></script>
+    <script src="{{ asset('jquery.js')}}"></script>
+
+    <script src="{{ asset('js\sweetalert.js')}}"></script>
 
 
 
+    <?php
+    if(session('message')){
+      ?>
+    <script>
+    swal({
+        title: "Success",
+        text: "@php echo session('message') @endphp",
+        icon: "success",
+        button: "Ok",
+    });
+    </script>
+    <?php
+    }
 
+    if(session('error')){
+      ?>
+    <script>
+    swal({
+        title: "Error",
+        text: "@php echo session('error') @endphp",
+        icon: "error",
+        button: "Ok",
+    });
+    </script>
+    <?php
+    }
+    ?>
 
 </body>
 

@@ -21,47 +21,6 @@
 </div>
 
 <div class="row">
-    <div class="col-lg-12">
-        <div class="profile">
-            <div class="profile-head">
-                <div class="photo-content">
-                    <div class="cover-photo"></div>
-                    <div class="profile-photo">
-                        <img src="images/profile/profile.png" class="img-fluid rounded-circle" alt="">
-                    </div>
-                </div>
-                <div class="profile-info">
-                    <div class="row justify-content-center">
-                        <div class="col-xl-8">
-                            <div class="row">
-                                <div class="col-xl-4 col-sm-4 border-right-1 prf-col">
-                                    <div class="profile-name">
-                                        <h4 class="text-primary">Mitchell C. Shay</h4>
-                                        <p>UX / UI Designer</p>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-sm-4 border-right-1 prf-col">
-                                    <div class="profile-email">
-                                        <h4 class="text-muted">hello@email.com</h4>
-                                        <p>Email</p>
-                                    </div>
-                                </div>
-                                <!-- <div class="col-xl-4 col-sm-4 prf-col">
-                                    <div class="profile-call">
-                                        <h4 class="text-muted">(+1) 321-837-1030</h4>
-                                        <p>Phone No.</p>
-                                    </div>
-                                </div> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row">
     <div class="col-lg-4">
         <div class="card">
             <div class="card-body">
@@ -69,91 +28,22 @@
                     <div class="text-center mt-4 border-bottom-1 pb-3">
                         <div class="row">
                             <div class="col">
-                                <h3 class="m-b-0">150</h3><span>Follower</span>
+                                @if($staffs->staff_avatar)
+                                    <img width="160" height="160" src="{{ asset('uploads/'.$staffs->staff_avatar)}}" alt="" class="rounded-circle" alt="#">
+                                    @else
+                                    <img width="160" height="160" src="{{ asset('uploads/mn.png')}}" alt="" class="rounded-circle" alt="#">
+                                    @endif
+
+
                             </div>
-                            <div class="col">
-                                <h3 class="m-b-0">140</h3><span>Place Stay</span>
-                            </div>
-                            <div class="col">
-                                <h3 class="m-b-0">45</h3><span>Reviews</span>
-                            </div>
+
                         </div>
-                        <div class="mt-4"><a href="javascript:void()" class="btn btn-primary pl-5 pr-5 mr-3 mb-4">Follow</a> <a href="javascript:void()" class="btn btn-dark pl-5 pr-5 mb-4">Send
-                                Message</a>
-                        </div>
+
                     </div>
                 </div>
-                <div class="profile-blog pt-3 border-bottom-1 pb-1">
-                    <h5 class="text-primary d-inline">Today Highlights</h5><a href="javascript:void()" class="pull-right f-s-16">More</a>
-                    <img src="images/profile/1.jpg" alt="" class="img-fluid mt-4 mb-4 w-100">
-                    <h4>Darwin Creative Agency Theme</h4>
-                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                </div>
-                <div class="profile-interest mt-4 pb-2 border-bottom-1">
-                    <h5 class="text-primary d-inline">Interest</h5>
-                    <div class="row mt-4">
-                        <div class="col-lg-4 col-xl-4 col-sm-4 col-6 int-col">
-                            <a href="javascript:void()" class="interest-cat">
-                                <img src="images/profile/2.jpg" alt="" class="img-fluid">
-                                <p>Shopping Mall</p>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-xl-4 col-sm-4 col-6 int-col">
-                            <a href="javascript:void()" class="interest-cat">
-                                <img src="images/profile/3.jpg" alt="" class="img-fluid">
-                                <p>Photography</p>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-xl-4 col-sm-4 col-6 int-col">
-                            <a href="javascript:void()" class="interest-cat">
-                                <img src="images/profile/4.jpg" alt="" class="img-fluid">
-                                <p>Art &amp; Gallery</p>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-xl-4 col-sm-4 col-6 int-col">
-                            <a href="javascript:void()" class="interest-cat">
-                                <img src="images/profile/2.jpg" alt="" class="img-fluid">
-                                <p>Visiting Place</p>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-xl-4 col-sm-4 col-6 int-col">
-                            <a href="javascript:void()" class="interest-cat">
-                                <img src="images/profile/3.jpg" alt="" class="img-fluid">
-                                <p>Shopping</p>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-xl-4 col-sm-4 col-6 int-col">
-                            <a href="javascript:void()" class="interest-cat">
-                                <img src="images/profile/4.jpg" alt="" class="img-fluid">
-                                <p>Biking</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="profile-news mt-4 pb-3">
-                    <h5 class="text-primary d-inline">Our Latest News</h5>
-                    <div class="media pt-3 pb-3">
-                        <img src="images/profile/5.jpg" alt="image" class="mr-3">
-                        <div class="media-body">
-                            <h5 class="m-b-5">John Tomas</h5>
-                            <p>I shared this on my fb wall a few months back, and I thought I'd share it here again because it's such a great read</p>
-                        </div>
-                    </div>
-                    <div class="media pt-3 pb-3">
-                        <img src="images/profile/6.jpg" alt="image" class="mr-3">
-                        <div class="media-body">
-                            <h5 class="m-b-5">John Tomas</h5>
-                            <p>I shared this on my fb wall a few months back, and I thought I'd share it here again because it's such a great read</p>
-                        </div>
-                    </div>
-                    <div class="media pt-3 pb-3">
-                        <img src="images/profile/7.jpg" alt="image" class="mr-3">
-                        <div class="media-body">
-                            <h5 class="m-b-5">John Tomas</h5>
-                            <p>I shared this on my fb wall a few months back, and I thought I'd share it here again because it's such a great read</p>
-                        </div>
-                    </div>
-                </div>
+
+
+
             </div>
         </div>
     </div>
@@ -161,7 +51,142 @@
         <div class="card">
             <div class="card-body">
                 <div class="profile-tab">
-                    <div class="custom-tab-1">
+
+                    <div class="media pt-3">
+
+                        {{-- <img src="images/profile/5.jpg" alt="image" class="mr-3"> --}}
+                        <h5 class="mr-3">Staff Name :</h5>
+                        <div class="media-body">
+                            <h5 class="m-b-5">{{ $staffs['staff_name']}}</h5>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="media pt-3">
+
+                        {{-- <img src="images/profile/5.jpg" alt="image" class="mr-3"> --}}
+                        <h5 class="mr-3">Staff Contact :</h5>
+                        <div class="media-body">
+                            <h5 class="m-b-5">{{ $staffs['staff_contact']}}</h5>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="media pt-3">
+
+                        {{-- <img src="images/profile/5.jpg" alt="image" class="mr-3"> --}}
+                        <h5 class="mr-3">Staff Email :</h5>
+                        <div class="media-body">
+                            <h5 class="m-b-5">{{ $staffs['staff_email']}}</h5>
+
+                        </div>
+
+                    </div>
+
+                    <div class="media pt-3">
+
+                        {{-- <img src="images/profile/5.jpg" alt="image" class="mr-3"> --}}
+                        <h5 class="mr-3">Date of Birth :</h5>
+                        <div class="media-body">
+                            <h5 class="m-b-5">{{ $staffs['staff_dob']}}</h5>
+
+                        </div>
+
+                    </div>
+
+                    <div class="media pt-3">
+
+                        {{-- <img src="images/profile/5.jpg" alt="image" class="mr-3"> --}}
+                        <h5 class="mr-3">Gender :</h5>
+                        <div class="media-body">
+                            <h5 class="m-b-5">{{ $staffs['gender']}}</h5>
+
+                        </div>
+
+                    </div>
+
+                    <div class="media pt-3">
+
+                        {{-- <img src="images/profile/5.jpg" alt="image" class="mr-3"> --}}
+                        <h5 class="mr-3">Staff Address :</h5>
+                        <div class="media-body">
+                            <h5 class="m-b-5">{{ $staffs['staff_address']}}</h5>
+
+                        </div>
+
+                    </div>
+
+                    <a class="btn btn-primary mt-4" href="/staff">Back</a>
+
+                    @if ($staffs['enroll'] == 0)
+                    <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#exampleModal">Enroll</button>
+                    @else
+
+
+                    <button  class="btn btn-light mt-4" disabled>Enrolled</button>
+                    @endif
+
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Enroll</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <form action="{{ route('enroll',$staffs['id'])}}" method='post'>
+                                  <input id='token' type="hidden" name="_token" value="{{ csrf_token() }}" />
+
+                                <div class="form-group">
+                                  <label for="recipient-name" class="col-form-label">Role</label>
+                                  <select class="form-control" name="role" required>
+                                      <option selected disabled value=''>Choose Role</option>
+                                      @foreach($position as $positions)
+
+                                      <option value="{{ $positions->id}}">{{ $positions->role_name}}</option>
+                                      <div id="editor-container" class="mb-1"></div>
+                                      @endforeach
+                                    <div id="editor-container" class="mb-1"></div>
+
+
+                                      </select>
+
+
+                                <div class="form-group">
+                                  <label for="password">Password</label>
+                                  <input class="form-control" type="password" name="password" id="password" required>
+                              </div>
+
+
+                                <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-primary">Enroll</button>
+
+
+
+
+
+
+                          </div>
+                              </form>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+
+                    {{-- <a class="btn btn-primary mt-4" href="/staff">Enroll</a> --}}
+
+
+
+                    {{-- <div class="custom-tab-1">
                         <ul class="nav nav-tabs">
                             <li class="nav-item"><a href="#my-posts" data-toggle="tab" class="nav-link active show">Posts</a>
                             </li>
@@ -349,7 +374,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

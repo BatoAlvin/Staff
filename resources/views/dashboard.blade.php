@@ -10,8 +10,8 @@
             <div class="card">
                 <div class="stat-widget-two card-body">
                     <div class="stat-content">
-                        <div class="stat-text">Today Expenses </div>
-                        <div class="stat-digit"> <i class="fa fa-usd"></i>8500</div>
+                        <div class="stat-text">Staff </div>
+                        <div class="stat-digit"> <i class="fa fa-users"></i>{{$staff}}</div>
                     </div>
                     <div class="progress">
                         <div class="progress-bar progress-bar-success w-85" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
@@ -23,8 +23,8 @@
             <div class="card">
                 <div class="stat-widget-two card-body">
                     <div class="stat-content">
-                        <div class="stat-text">Income Detail</div>
-                        <div class="stat-digit"> <i class="fa fa-usd"></i>7800</div>
+                        <div class="stat-text">Users</div>
+                        <div class="stat-digit"> <i class="fa fa-user"></i>{{$user}}</div>
                     </div>
                     <div class="progress">
                         <div class="progress-bar progress-bar-primary w-75" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
